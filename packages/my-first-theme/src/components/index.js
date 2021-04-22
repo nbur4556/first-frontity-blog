@@ -20,6 +20,8 @@ const Root = ({ state }) => {
                 <Link link="/about">About Me</Link>
             </nav>
 
+            <hr />
+
             <main>
                 <Switch>
                     <List when={data.isArchive} />
