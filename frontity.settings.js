@@ -9,7 +9,7 @@ const settings = {
   },
   "packages": [
     {
-      "name": "my-first-theme"
+      name: "my-first-theme"
     },
     {
       "name": "@frontity/wp-source",
