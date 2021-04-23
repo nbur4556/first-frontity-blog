@@ -16,7 +16,7 @@ const Root = ({ state }) => {
         <>
             <Global styles={css(globalStyles)} />
 
-            <Header>
+            <Header isPostType={data.isPostType}>
                 <HeaderContent>
                     <h1>Hello Frontity</h1>
                     <p>Current URL: {state.router.link}</p>
@@ -46,7 +46,7 @@ export default connect(Root);
 const Header = styled.header`
     border-width: 0 0 8px 0;
     border-style: solid;
-    border-color: maroon;
+    border-color: ${props => props.isPostType ? 'lightseagreen' : 'maroon'};
 
     background-color: #e5edee;
 
