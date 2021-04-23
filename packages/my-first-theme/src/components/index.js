@@ -6,6 +6,7 @@ import Switch from '@frontity/components/switch';
 import List from './list';
 import Page from './page';
 import Post from './post';
+import Loading from './loading';
 
 import globalStyles from '../stylesheets/index.css';
 
@@ -34,6 +35,7 @@ const Root = ({ state, actions }) => {
 
             <Main>
                 <Switch>
+                    <Loading when={data.isFetching} />
                     <List when={data.isArchive} />
                     <Page when={data.isPage} />
                     <Post when={data.isPost} />
