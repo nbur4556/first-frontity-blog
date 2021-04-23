@@ -7,6 +7,7 @@ import List from './list';
 import Page from './page';
 import Post from './post';
 import Loading from './loading';
+import Error from './error';
 
 import globalStyles from '../stylesheets/index.css';
 
@@ -40,6 +41,7 @@ const Root = ({ state, actions }) => {
                     <Page when={data.isPage} />
                     <Post when={data.isPost} />
                     <Page when={data.isDestinations} />
+                    <Error when={data.isError} />
                 </Switch>
             </Main>
         </>
