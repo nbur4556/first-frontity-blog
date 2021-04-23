@@ -1,14 +1,22 @@
 import Root from './components';
 
-export default {
+const myFirstTheme = {
   name: "my-first-theme",
   roots: {
     theme: Root
   },
   state: {
-    theme: {}
+    theme: {
+      isUrlVisible: false
+    }
   },
   actions: {
-    theme: {}
+    theme: {
+      toggleUrl: ({ state }) => {
+        state.theme.isUrlVisible = !state.theme.isUrlVisible;
+      }
+    }
   }
 };
+
+export default myFirstTheme;
