@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, Global, css } from 'frontity';
+import { connect, Global, css, styled } from 'frontity';
 import Link from '@frontity/components/link';
 import Switch from '@frontity/components/switch';
 
@@ -16,18 +16,17 @@ const Root = ({ state }) => {
         <>
             <Global styles={css(globalStyles)} />
 
+            <Header>
+                <h1>Hello Frontity</h1>
+                <p>Current URL: {state.router.link}</p>
 
-            <h1>Hello Frontity</h1>
-            <p>Current URL: {state.router.link}</p>
-
-            <nav>
-                <Link link="/">Home</Link>
-                <Link link="/destinations">Destinations</Link>
-                <Link link="/travel-tips">Travel Tips</Link>
-                <Link link="/about">About Me</Link>
-            </nav>
-
-            <hr />
+                <nav>
+                    <Link link="/">Home</Link>
+                    <Link link="/destinations">Destinations</Link>
+                    <Link link="/travel-tips">Travel Tips</Link>
+                    <Link link="/about">About Me</Link>
+                </nav>
+            </Header>
 
             <main>
                 <Switch>
@@ -41,3 +40,16 @@ const Root = ({ state }) => {
 }
 
 export default connect(Root);
+
+const Header = styled.header`
+    border-width: 0 0 8px 0;
+    border-style: solid;
+    border-color: maroon;
+
+    background-color: #e5edee;
+
+    h1{
+        color: #4a4a4a;
+    }
+`;
+
