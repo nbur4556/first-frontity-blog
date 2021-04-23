@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, styled } from 'frontity';
+import { connect, styled, Head } from 'frontity';
 import dayjs from 'dayjs';
 
 const Post = ({ state, libraries }) => {
@@ -12,6 +12,11 @@ const Post = ({ state, libraries }) => {
 
     return (
         <article>
+            <Head>
+                <title>{post.title.rendered}</title>
+                <meta name="description" content={post.excerpt.rendered} />
+            </Head>
+
             <h2>{post.title.rendered}</h2>
             <PostInfo>
                 <h3>Posted: {formattedDate}</h3>
