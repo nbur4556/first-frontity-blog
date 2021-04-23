@@ -9,13 +9,20 @@ const settings = {
   },
   "packages": [
     {
-      name: "my-first-theme"
+      "name": "my-first-theme"
     },
     {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://firstfrontityblog.wordpress.com/"
+          "url": "https://firstfrontityblog.wordpress.com/",
+          "postTypes": [
+            {
+              "type": "destinations",
+              "endpoint": "destinations",
+              "archive": "/destinations"
+            }
+          ]
         }
       }
     },
