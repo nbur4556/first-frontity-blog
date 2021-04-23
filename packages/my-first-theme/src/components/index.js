@@ -21,23 +21,21 @@ const Root = ({ state }) => {
                     <h1>Hello Frontity</h1>
                     <p>Current URL: {state.router.link}</p>
 
-                    <nav>
+                    <Menu>
                         <Link link="/">Home</Link>
                         <Link link="/destinations">Destinations</Link>
                         <Link link="/travel-tips">Travel Tips</Link>
                         <Link link="/about">About Me</Link>
-                    </nav>
+                    </Menu>
                 </HeaderContent>
             </Header>
 
             <Main>
-                <main>
-                    <Switch>
-                        <List when={data.isArchive} />
-                        <Page when={data.isPage} />
-                        <Post when={data.isPost} />
-                    </Switch>
-                </main>
+                <Switch>
+                    <List when={data.isArchive} />
+                    <Page when={data.isPage} />
+                    <Post when={data.isPost} />
+                </Switch>
             </Main>
         </>
     )
@@ -85,5 +83,16 @@ const Main = styled.main`
         color: #828282;
         font-size: 0.8em;
         margin-bottom: 1em;
+    }
+`;
+
+const Menu = styled.nav`
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    & > a {
+        margin-right: 1em;
+        color: steelblue;
+        text-decoration: none;
     }
 `;
