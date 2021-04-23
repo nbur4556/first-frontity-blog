@@ -17,24 +17,28 @@ const Root = ({ state }) => {
             <Global styles={css(globalStyles)} />
 
             <Header>
-                <h1>Hello Frontity</h1>
-                <p>Current URL: {state.router.link}</p>
+                <HeaderContent>
+                    <h1>Hello Frontity</h1>
+                    <p>Current URL: {state.router.link}</p>
 
-                <nav>
-                    <Link link="/">Home</Link>
-                    <Link link="/destinations">Destinations</Link>
-                    <Link link="/travel-tips">Travel Tips</Link>
-                    <Link link="/about">About Me</Link>
-                </nav>
+                    <nav>
+                        <Link link="/">Home</Link>
+                        <Link link="/destinations">Destinations</Link>
+                        <Link link="/travel-tips">Travel Tips</Link>
+                        <Link link="/about">About Me</Link>
+                    </nav>
+                </HeaderContent>
             </Header>
 
-            <main>
-                <Switch>
-                    <List when={data.isArchive} />
-                    <Page when={data.isPage} />
-                    <Post when={data.isPost} />
-                </Switch>
-            </main>
+            <Main>
+                <main>
+                    <Switch>
+                        <List when={data.isArchive} />
+                        <Page when={data.isPage} />
+                        <Post when={data.isPost} />
+                    </Switch>
+                </main>
+            </Main>
         </>
     )
 }
@@ -53,3 +57,33 @@ const Header = styled.header`
     }
 `;
 
+const HeaderContent = styled.div`
+    max-width: 800px;
+    padding: 2em 1em;
+    margin: auto
+`;
+
+const Main = styled.main`
+    max-width: 800px;
+    padding: 1em;
+    margin: auto;
+
+    img {
+        max-width: 100%;
+    }
+
+    h2{
+        margin: 0.5em 0;
+    }
+
+    p{
+        line-height: 1.25em;
+        margin-bottom: 0.75em;
+    }
+
+    figcaption {
+        color: #828282;
+        font-size: 0.8em;
+        margin-bottom: 1em;
+    }
+`;
