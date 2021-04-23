@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'frontity';
+import { connect, Global, css } from 'frontity';
 import Link from '@frontity/components/link';
 import Switch from '@frontity/components/switch';
 
@@ -7,11 +7,16 @@ import List from './list';
 import Page from './page';
 import Post from './post';
 
+import globalStyles from '../stylesheets/index.css';
+
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
 
     return (
         <>
+            <Global styles={css(globalStyles)} />
+
+
             <h1>Hello Frontity</h1>
             <p>Current URL: {state.router.link}</p>
 
