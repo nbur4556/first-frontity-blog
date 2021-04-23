@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'frontity';
+import { connect, styled } from 'frontity';
 import dayjs from 'dayjs';
 
 const Post = ({ state }) => {
@@ -12,11 +12,25 @@ const Post = ({ state }) => {
     return (
         <article>
             <h2>{post.title.rendered}</h2>
-            <h3>Posted: {formattedDate}</h3>
-            <h3>Author: {author.name}</h3>
+            <PostInfo>
+                <h3>Posted: {formattedDate}</h3>
+                <h3>Author: {author.name}</h3>
+            </PostInfo>
             <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </article>
     );
 }
 
 export default connect(Post);
+
+const PostInfo = styled.section`
+    background-image:linear-gradient(to right, #f4f4f4, #fff);
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-left: 4px solid lightseagreen;
+    font-size: 0.8em;
+
+    & > h3 {
+        margin: 0;
+    }
+`;
